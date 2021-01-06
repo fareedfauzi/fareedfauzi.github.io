@@ -1,4 +1,3 @@
-
 ---
 title: "Malicious document analysis Notes and Cheatsheet"
 date: "2020-12-15"
