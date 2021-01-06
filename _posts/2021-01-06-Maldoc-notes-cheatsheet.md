@@ -228,8 +228,72 @@ Use **olevba3** to parse OLE and OpenXML files such as MS Office documents (e.g.
 Use **ViperMonkey** to emulate the VBA. Vmonkey is a VBA Emulation engine written in Python, designed to analyze and deobfuscate malicious VBA Macros contained in Microsoft Office files.
 
     remnux@remnux:~/Desktop$ vmonkey macro-sample.xls
+         _    ___                 __  ___            __             
+    | |  / (_)___  ___  _____/  |/  /___  ____  / /_____  __  __
+    | | / / / __ \/ _ \/ ___/ /|_/ / __ \/ __ \/ //_/ _ \/ / / /
+    | |/ / / /_/ /  __/ /  / /  / / /_/ / / / / ,< /  __/ /_/ / 
+    |___/_/ .___/\___/_/  /_/  /_/\____/_/ /_/_/|_|\___/\__, /  
+         /_/                                           /____/   
+    vmonkey 0.08 - https://github.com/decalage2/ViperMonkey
+    THIS IS WORK IN PROGRESS - Check updates regularly!
+    Please report any issue at https://github.com/decalage2/ViperMonkey/issues
     
-# Pcode (if macro was destroyed)
+    ===============================================================================
+    FILE: macro-sample.xls
+    INFO     Starting emulation...
+    INFO     Emulating an Office (VBA) file.
+    INFO     Reading document metadata...
+    Traceback (most recent call last):
+      File "/opt/vipermonkey/src/vipermonkey/vipermonkey/export_all_excel_sheets.py", line 15, in <module>
+        from unotools import Socket, connect
+    ModuleNotFoundError: No module named 'unotools'
+    ERROR    Running export_all_excel_sheets.py failed. Command '['python3', '/opt/vipermonkey/src/vipermonkey/vipermonkey/export_all_excel_sheets.py', '/tmp/tmp_excel_file_3189461446']' returned non-zero exit status 1
+    INFO     Saving dropped analysis artifacts in .//macro-sample.xls_artifacts/
+    INFO     Parsing VB...
+    Error: [Errno 2] No such file or directory: ''.
+    -------------------------------------------------------------------------------
+    VBA MACRO ThisWorkbook.cls 
+    in file:  - OLE stream: u'_VBA_PROJECT_CUR/VBA/ThisWorkbook'
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    -------------------------------------------------------------------------------
+    VBA CODE (with long lines collapsed):
+    Private Sub Workbook_Open()
+      Call userAldiLoadr
+      Sheet3.Visible = xlSheetVisible
+     Sheet3.Copy
+     End Sub
+    
+    -------------------------------------------------------------------------------
+    PARSING VBA CODE:
+    INFO     parsed Sub Workbook_Open (): 3 statement(s)
+    <---snip--->
+    -------------------------------------------------------------------------------
+    PARSING VBA CODE:
+    INFO     parsed Sub Mace5 (): 2 statement(s)
+    INFO     parsed Sub Maceo8 (): 2 statement(s)
+    INFO     parsed Sub unAldizip ([ByRef Fname as Variant, ByRef FileNameFolder as Variant]): 4 statement(s)
+    -------------------------------------------------------------------------------
+    VBA MACRO Module2.bas 
+    in file:  - OLE stream: u'_VBA_PROJECT_CUR/VBA/Module2'
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+    -------------------------------------------------------------------------------
+    VBA CODE (with long lines collapsed):
+    Sub userAldiLoadr()
+    
+        Dim path_Aldi_file As String
+        Dim file_Aldi_name  As String
+        Dim zip_Aldi_file  As Variant
+        Dim fldr_Aldi_name  As Variant
+        
+        Dim byt() As Byte
+        
+        Dim ar1Aldi() As String
+        
+        file_Aldi_name = "dhrwarhsav"
+        
+        fldr_Aldi_name = Environ$("ALLUSERSPROFILE") & "\Edlacar\"
+    
+# VBA stomping (if macro was destroyed)
 Use pcodedmp to disassemble p-code macro code from filename.doc
     
     remnux@remnux:~/Desktop$ pcodedmp macro-sample.xls -d
@@ -312,5 +376,6 @@ Use **msodde** to detect and extract DDE/DDEAUTO links from MS Office documents,
     CELL:A2        , PartialEvaluation   , RETURN()
     [END of Deobfuscation]
     time elapsed: 5.669408082962036
+
 
 
