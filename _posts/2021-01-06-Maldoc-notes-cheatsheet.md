@@ -1,3 +1,4 @@
+
 ---
 title: "Malicious document analysis Notes and Cheatsheet"
 date: "2020-12-15"
@@ -228,8 +229,10 @@ Use **olevba3** to parse OLE and OpenXML files such as MS Office documents (e.g.
 Use **ViperMonkey** to emulate the VBA. Vmonkey is a VBA Emulation engine written in Python, designed to analyze and deobfuscate malicious VBA Macros contained in Microsoft Office files.
 
     remnux@remnux:~/Desktop$ vmonkey macro-sample.xls
-    Pcode (if macro destroy)
-    Use pcodedmp to disassemble p-code macro code from filename.doc
+    
+# Pcode (if macro was destroyed)
+Use pcodedmp to disassemble p-code macro code from filename.doc
+    
     remnux@remnux:~/Desktop$ pcodedmp macro-sample.xls -d
     Processing file: macro-sample.xls
     ===============================================================================
@@ -257,7 +260,7 @@ Use **ViperMonkey** to emulate the VBA. Vmonkey is a VBA Emulation engine writte
     	ArgsMemLd Borders 0x0001
     <---snip--->
     Line #20:
-    	FuncDefn (Sub Maceo8())
+    	FuncDefn (Sub Maceo8())    
 
 # DDE attack
 Use **msodde** to detect and extract DDE/DDEAUTO links from MS Office documents, RTF and CSV
@@ -310,6 +313,5 @@ Use **msodde** to detect and extract DDE/DDEAUTO links from MS Office documents,
     CELL:A2        , PartialEvaluation   , RETURN()
     [END of Deobfuscation]
     time elapsed: 5.669408082962036
-
 
 
