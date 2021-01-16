@@ -138,3 +138,19 @@ Required skills and knowledge :-
 | [https://join.eset.com/en/challenges](https://join.eset.com/en/challenges/crack-me) |  If you want to join the team that every day faces global cyber-threats, uncover a hidden puzzle in the crackme program and prove us your potential.
 | [https://ropemporium.com/](https://ropemporium.com/)|  Learn return-oriented programming through a series of challenges designed to teach ROP techniques in isolation, with minimal reverse-engineering and bug-hunting.| 
 
+## Proper way to learn Reverse Engineering
+1. Learn C - [Youtube](https://www.youtube.com/watch?v=KJgsSFOSQv0)
+2. Assembly  - [OpenSecurityTraining](https://opensecuritytraining.info/IntroX86.html)
+3. Introduction to basic C/C++ programming for complete beginners - [Introduction to basic C/C++ programming for complete beginner](https://www.youtube.com/playlist?list=PLhx7-txsG6t7icqrX5C98lu8ShJpM5tw7)
+4. C/C++ Programming Intermediate - [C/C++ Programming Intermediate](https://www.youtube.com/playlist?list=PLhx7-txsG6t6GfelXMN8vtgSd5shqpUNG)
+5. Reverse Engineering with Ghidra | HackadayU - [Reverse Engineering with Ghidra](https://www.youtube.com/playlist?list=PL_tws4AXg7auglkFo6ZRoWGXnWL0FHAEi)
+6. Learn to use IDA Pro with hexray
+7. Learn to use Ghidra
+8. Learn to debugging
+9. Learn to use x64dbg
+10. Learn how to crack program in Lena Tutorial
+11. Solve crackmes
+12. Learn to unpack
+13. Do exercises on Flare On
+14. Read a lot about malwares
+15. Reverse malware
