@@ -144,13 +144,17 @@ Required skills and knowledge :-
 3. Introduction to basic C/C++ programming for complete beginners - [Introduction to basic C/C++ programming for complete beginner](https://www.youtube.com/playlist?list=PLhx7-txsG6t7icqrX5C98lu8ShJpM5tw7)
 4. C/C++ Programming Intermediate - [C/C++ Programming Intermediate](https://www.youtube.com/playlist?list=PLhx7-txsG6t6GfelXMN8vtgSd5shqpUNG)
 5. Reverse Engineering with Ghidra | HackadayU - [Reverse Engineering with Ghidra](https://www.youtube.com/playlist?list=PL_tws4AXg7auglkFo6ZRoWGXnWL0FHAEi)
-6. Learn to use IDA Pro with hexray
-7. Learn to use Ghidra
-8. Learn to debugging
-9. Learn to use x64dbg
-10. Learn how to crack program in Lena Tutorial
-11. Solve crackmes
-12. Learn to unpack
-13. Do exercises on Flare On
-14. Read a lot about malwares
-15. Reverse malware
+6. Intermediate Assembly - [Intermediate Assembly](https://opensecuritytraining.info/IntermediateX86.html)
+7. Intro to Windbg - [Intro to Windb](https://www.youtube.com/playlist?list=PLhx7-txsG6t6n_E2LgDGqgvJtCHPL7UFu)
+6. Learn Windows Internal - [Windows Internal](https://www.youtube.com/watch?v=4AkzIbmI3q4&list=PLhx7-txsG6t5i-kIZ_hwJSgZrnka4GXvn)
+8. Learn PE files - [The Life of Binaries ](https://www.youtube.com/playlist?list=PLUFkSN0XLZ-n_Na6jwqopTt1Ki57vMIc3)
+9. Learn to use IDA Pro with hexray
+10. Learn to use Ghidra
+11. Learn to debugging
+12. Learn to use x64dbg
+13. Learn how to crack program in Lena Tutorial
+14. Solve crackmes
+15. Learn to unpack
+16. Do exercises on Flare On
+17. Read a lot about malwares
+18. Reverse malware
