@@ -146,7 +146,7 @@ Required skills and knowledge :-
 5. Reverse Engineering with Ghidra | HackadayU - [Reverse Engineering with Ghidra](https://www.youtube.com/playlist?list=PL_tws4AXg7auglkFo6ZRoWGXnWL0FHAEi)
 6. Intermediate Assembly - [Intermediate Assembly](https://opensecuritytraining.info/IntermediateX86.html)
 7. Intro to Windbg - [Intro to Windb](https://www.youtube.com/playlist?list=PLhx7-txsG6t6n_E2LgDGqgvJtCHPL7UFu)
-6. Learn Windows Internal - [Windows Internal](https://www.youtube.com/watch?v=4AkzIbmI3q4&list=PLhx7-txsG6t5i-kIZ_hwJSgZrnka4GXvn)
+6. Learn Windows Internal - [Windows Internal](https://www.youtube.com/watch?v=4AkzIbmI3q4&list=PLhx7-txsG6t5i-kIZ_hwJSgZrnka4GXvn) and [Windows Internal 2](https://www.youtube.com/playlist?list=PLyXEghr1bwVFrWA8EyfXJSYUD97EO7WUM)
 8. Learn PE files - [The Life of Binaries ](https://www.youtube.com/playlist?list=PLUFkSN0XLZ-n_Na6jwqopTt1Ki57vMIc3)
 9. Learn to use IDA Pro with hexray
 10. Learn to use Ghidra
