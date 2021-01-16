@@ -138,7 +138,7 @@ Required skills and knowledge :-
 | [https://join.eset.com/en/challenges](https://join.eset.com/en/challenges/crack-me) |  If you want to join the team that every day faces global cyber-threats, uncover a hidden puzzle in the crackme program and prove us your potential.
 | [https://ropemporium.com/](https://ropemporium.com/)|  Learn return-oriented programming through a series of challenges designed to teach ROP techniques in isolation, with minimal reverse-engineering and bug-hunting.| 
 
-## Proper way to learn Reverse Engineering
+## How I learn RE
 1. Learn C - [Youtube](https://www.youtube.com/watch?v=KJgsSFOSQv0)
 2. Assembly  - [OpenSecurityTraining](https://opensecuritytraining.info/IntroX86.html)
 3. Introduction to basic C/C++ programming for complete beginners - [Introduction to basic C/C++ programming for complete beginner](https://www.youtube.com/playlist?list=PLhx7-txsG6t7icqrX5C98lu8ShJpM5tw7)
