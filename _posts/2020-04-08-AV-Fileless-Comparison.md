@@ -151,7 +151,7 @@ bash catchyou.sh
 13. LSASS dump
 14. Disable, kill, sleep AV services/process behavior
 15. Modifying AV registry
-16. Refer (Mitre)[https://attack.mitre.org/tactics/enterprise/] for more ideas
+16. Refer [Mitre](https://attack.mitre.org/tactics/enterprise/) for more ideas
 
 # Note
 Msvenom payload may easily detect by AV because of it's popularity used by many attacker and well recognized by its pattern.
