@@ -83,7 +83,6 @@ windows/ducky
 windows/hta
 ```
 
-Powersploit
 
 ## Koadic
 
@@ -135,6 +134,24 @@ git clone https://github.com/thelinuxchoice/catchyou
 cd catchyou
 bash catchyou.sh
 ```
+
+## Others to consider when POC AV (include non fileless)
+1. Powersploit
+2. Powertools
+3. Powerview
+4. Others powershell invoking module
+5. Powershell script
+6. Veil evasion
+7. Cobalt Strike payloads
+8. Metasploit various payloads
+9. Maldoc
+10. Exploit
+11. Process injection
+12. Credential harvesting tools
+13. LSASS dump
+14. Disable, kill, sleep AV services/process behavior
+15. Modifying AV registry
+16. Refer (Mitre)[https://attack.mitre.org/tactics/enterprise/] for more ideas
 
 # Note
 Msvenom payload may easily detect by AV because of it's popularity used by many attacker and well recognized by its pattern.
