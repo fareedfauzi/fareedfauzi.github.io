@@ -9,6 +9,17 @@ categories:
 ---
 
 # RTF
+
+RTF often comes with exploits targetting Microsoft Word vulnerabilities. Always look for embedded objects and anomalous content in the RTF.
+
+Be prepared to locate, extract and analyze shellcode.
+- Emulate using scdbg OR
+- Execute using jmp2it OR
+- Convert to executable and debug the executable using x32dbg
+   - Find the start offset of the shellcode
+- Behavioral analysis
+
+
 RTF exploit list:
  - CVE-2018-8570 
  - CVE-2018-0802 
