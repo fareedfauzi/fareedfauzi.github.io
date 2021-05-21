@@ -128,10 +128,13 @@ To dump specific group:
 
     rtfdump.py mal.rtf -s 330 -H -d > output.bin
 
-Royal Road exploit kit version:
+If you're likely encountring RoyalRoad RTF, picture below show Royal Road exploit kit version pattern:
 
 ![enter image description here](https://nao-sec.org/assets/2020-01-30/version.png)
 Source: [An Overhead View of the Royal Road | @nao_sec (nao-sec.org)](https://nao-sec.org/2020/01/an-overhead-view-of-the-royal-road.html)
+
+Also, we can use YARA rules made by NaoSec for RoyalRoad:
+[RoyalRoad YARA rules](https://github.com/nao-sec/yara_rules)
 
 # Template injection
 Reside in `word/_rels/settings.xml.rels` 
