@@ -136,7 +136,14 @@ Source: [An Overhead View of the Royal Road | @nao_sec (nao-sec.org)](https://na
 Also, we can use YARA rules made by NaoSec for RoyalRoad:
 [RoyalRoad YARA rules](https://github.com/nao-sec/yara_rules)
 
-# Template injection
+## RTF template injection
+Search for control word `\*\template`. Most attacker will serve the RTF template in this control word. For example:
+
+![image](https://user-images.githubusercontent.com/56353946/123367279-442fb300-d5ac-11eb-9794-bb39c8ac0232.png)
+
+
+
+# DOCX Template injection
 Reside in `word/_rels/settings.xml.rels` 
 
 # Macro attack
