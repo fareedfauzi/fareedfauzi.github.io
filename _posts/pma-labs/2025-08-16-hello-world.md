@@ -1,5 +1,6 @@
 ---
 title: "Hello World (PMA Labs)"
+categories: pma-labs
 tags:
 - Malware
 ---
