@@ -25,7 +25,6 @@ titles:
   tr      : &TR       Ana Sayfa
   # @end locale config
 show_title: false
-{%- assign filtered_posts = paginator.posts | where_exp: "p", "not p.path contains '_posts/pma-labs/'" -%}
 articles:
   data_source: paginator.posts
   article_type: BlogPosting
@@ -34,6 +33,8 @@ articles:
   show_readmore: true
   show_info: true
 ---
+
+{%- assign filtered_posts = paginator.posts | where_exp: "p", "not p.path contains '_posts/pma-labs/'" -%}
 <div class="layout--home">
   {%- include paginator.html -%}
 </div>
