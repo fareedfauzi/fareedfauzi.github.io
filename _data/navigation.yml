@@ -13,9 +13,9 @@ header:
 
     - titles:
       # @start locale config
-      en      : &EN       Cheat-Sheet 📑
+      en      : &EN       Cheatsheet 📑
       # @end locale config
-    url: /pma-labs.html
+    url: /cheatsheets.html
 
   - titles:
       # @start locale config
