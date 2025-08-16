@@ -4,7 +4,7 @@ title: PMA Labs ☣️
 permalink: /pma-labs.html
 ---
 
-{% assign filtered_posts = site.posts | where_exp:"p", "p.categories contains 'pma-labs'" %}
+{%- assign labs = site.posts | where_exp: "p", "p.path contains '_posts/pma-labs/'" -%}
 
 <div class="layout--archive js-all">
   <div class="js-result layout--archive__result">
