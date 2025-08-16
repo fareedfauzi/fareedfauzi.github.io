@@ -4,17 +4,20 @@ title: PMA Labs ☣️
 permalink: /pma-labs.html
 ---
 
-{%- assign labs = site.posts | where_exp: "p", "p.path contains '_posts/pma-labs/'" -%}
+{%- assign labs = site['pma-labs'] | sort: 'date' | reverse -%}
 
 <div class="layout--archive js-all">
-  <div class="js-result layout--archive__result">
+  <div class="js-result layout--archive__result d-none">
     {%- include article-list.html
         articles=labs
         type='brief'
         show_info=true
-        show_excerpt=true
-        show_readmore=true
-        reverse=true
+        reverse=false
+        group_by='year'
     -%}
   </div>
 </div>
+
+<script>
+  {%- include scripts/archieve.js -%}
+</script>
