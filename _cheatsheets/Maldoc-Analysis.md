@@ -942,5 +942,3 @@ Basic one:
 # Zelster's Cheatsheet
 
 ![image](https://user-images.githubusercontent.com/56353946/227059639-92f25596-bfdf-48af-9f6f-ba5e1e5405ab.png)
-
-
