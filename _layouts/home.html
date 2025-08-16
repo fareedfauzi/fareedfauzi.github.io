@@ -34,8 +34,17 @@ articles:
   show_info: true
 ---
 <div class="layout--home">
-    {%- assign filtered_posts = paginator.posts
-      | where_exp: "p", "p.path contains '_posts/pma-labs/' == false" -%}
+  {%- assign filtered_posts = paginator.posts
+      | where_exp: "p", "not p.path contains '_posts/pma-labs/'" -%}
+
+  {%- include article-list.html
+      articles=filtered_posts
+      type='brief'
+      show_info=true
+      show_excerpt=true
+      show_readmore=true
+  -%}
+
   {%- include paginator.html -%}
 </div>
 <script>
