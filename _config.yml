@@ -226,5 +226,4 @@ collections:
     permalink: /pma-labs/:name/
   cheatsheets:
     output: true
-    permalink: /cheatsheets/:name/
 
