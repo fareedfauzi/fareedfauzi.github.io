@@ -16,7 +16,7 @@ That said, I’m still a noob even today. So this guide isn’t 100% correct. It
 
 # Code of conducts
 1. Stick to evidence, not guesses. Assumptions can guide your analysis, but they should never be the foundation of your attribution.
-2. Attribution takes time. It’s rarely quick — sometimes it takes years of tracking and connecting the dots.
+2. Attribution takes time. It’s rarely quick, sometimes it takes years of tracking and connecting the dots.
 3. One clue isn’t enough. An IP, a string, or a single sample won’t cut it. Always cross-check with multiple data points using your internal data or maybe ask other researchers.
 4. Track the bigger picture. Document attack timelines, overlaps between campaigns, and differences in malware versions.
 5. Actors change. Groups evolve their tools and sometimes shift their targeting, so keep an eye on how they grow over time.
@@ -230,7 +230,6 @@ TTPs often overlap across different actors. Many groups use the same techniques 
 - Regional or topical lures: Documents or emails crafted around issues tied to specific countries, organizations, or events.
 
 ## [5] Operational Security Mistakes
-
 OpSec mistakes are some of the strongest indicators for attribution, but they are rare. When they do occur, they can reveal personal habits, working hours, or even identities of operators.
 
 ### Bad OpSec Indicators
@@ -252,7 +251,6 @@ OpSec mistakes are some of the strongest indicators for attribution, but they ar
 - Language settings: Office lure documents or malware compiled with specific locale/language IDs.
 
 ## [6] Passwords, Notes, and Human Elements
-
 Human elements like passwords, ransom notes, and wording styles can be very telling. They are often reused across operations, intentionally or by mistake, and can strongly support attribution when combined with other evidence.
 
 ### Passwords
@@ -301,7 +299,6 @@ When these techniques are used, it can provide valuable insights such as verifyi
 
 ### Exploiting Attacker Infrastructure
 - Panel takeovers: Many crimeware groups rely on web-based C2 panels. Weak authentication, SQL injection, or outdated software sometimes allow defenders to hijack these panels, exposing operator accounts, activity logs, and victim data.
-- Many crimeware groups rely on web-based C2 panels. Weak logins, SQL injection, or outdated code have allowed us to take over these panels, exposing operator accounts, logs, and victim lists.
 - Attacker storage servers and FTP sites can also leak useful data. I’ve seen cases where malware samples contained hardcoded FTP credentials, researchers used them to access staging servers and pull down exfiltrated files.
 
 ### Monitoring Legitimate Services Used as C2
@@ -311,7 +308,6 @@ When these techniques are used, it can provide valuable insights such as verifyi
 - Another trick is planting bait files with a canary token inside. If attackers steal and open the file, it will reveals their IP. If the operators aren’t careful like they forget to hide behind a VPN you can sometimes trace it back to their real location.
 
 # Attribution Mistakes Tips
-
 Attribution is tricky. Threat actors share tools, infrastructure, and even techniques, which makes things messy. The points below are reminders of what *not* to do whic can help you avoid rushing into conclusions when investigating a campaign. Always stack multiple evidence types (infrastructure, TTPs, victimology, OpSec mistakes, etc.) before making an attribution call. 
 
 ## General Rules
