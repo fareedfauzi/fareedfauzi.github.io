@@ -27,7 +27,7 @@ header:
 
   - titles:
       # @start locale config
-      en      : &EN       PMA Labs
+      en      : &EN       PMA-Labs
       en-GB   : *EN
       en-US   : *EN
       en-CA   : *EN
