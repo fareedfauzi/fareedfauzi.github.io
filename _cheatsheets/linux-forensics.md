@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Cheatsheet: Linux Forensics Analysis"
-date: 2025-08-16
+date: 2024-03-29
 tags:
 - DFIR
 ---
