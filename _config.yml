@@ -203,31 +203,16 @@ exclude:
 
 defaults:
   - scope:
-      path: "_posts"
+      path: ""
       type: posts
     values:
       layout: article
       sharing: true
       license: true
-      categories: ["blog"]
       aside:
         toc: true
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: true
-  - scope:
-      path: "_posts/pma-labs"
-      type: posts
-    values:
-      layout: article
-      sharing: true
-      license: true
-      categories: ["pma-labs"]
-      aside:
-        toc: true
-      show_edit_on_github: false
-      show_subscribe: false
-      pageview: true
+      show_edit_on_github: true
+      show_subscribe: true
 
 
 ## => Plugins
