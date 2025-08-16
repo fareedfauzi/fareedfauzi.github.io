@@ -1,0 +1,19 @@
+---
+layout: page
+title: PMA Labs ☣️
+permalink: /pma-labs.html
+---
+
+<div class="layout--archive js-all">
+  <div class="js-result layout--archive__result">
+    {%- assign labs = site.categories['pma-labs'] -%}
+    {%- include article-list.html
+        articles=labs
+        type='brief'
+        show_info=true
+        reverse=true
+        show_readmore=true
+        show_excerpt=true
+    -%}
+  </div>
+</div>
