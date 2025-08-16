@@ -24,10 +24,6 @@ That said, I’m still a noob even today. So this guide isn’t 100% correct. It
 7. Attribution to a specific actor = hard.
 8. Attribution to a government/nation = way harder. Why?
     - Use front companies, proxies, or criminal affiliates
-    - Routinely use false flags
-    - Share tooling between different units or even with crimeware groups.
-    - Many groups rely on similar methods, making it tough to tell them apart.
-    - Builder leaks, shared frameworks, or recycled malware families can appear in multiple campaigns.
     - Naming a country can trigger diplomatic, legal, or military consequences.
     - Public reports are often toned down. That’s why you’ll often see phrasing like “likely linked to Chinese state interests” instead of direct blame.
 9. Know when to stop. Usually, attribution ends at the actor-level (e.g., APT29), and you should always state your confidence level.
@@ -39,19 +35,18 @@ That said, I’m still a noob even today. So this guide isn’t 100% correct. It
 11. Don’t overstate. Use careful wording like “likely,” “possibly,” or “with moderate confidence” instead of making it sound absolute.
 
 # What usually you need to have to conduct threat attribution?
-
 1. A LOT of telemetry and dataset. Attribution isn’t possible without a big pool of telemetry and evidence.
     - Endpoint
     - Network
     - Logs
     - Samples
-2. A collection of previous samples and campaign data helps you spot code overlaps and recurring TTPs
-3. Knowledge and experience about the samples, group, campaign. The more you’ve worked with certain malware families, groups, or campaigns, the easier it is to recognize patterns and connect dots. Yeah, it's a Long term game my friend.
-4. Threat intelligence feeds. These can be public, private, or paid, and often include:
+2. A collection of previous samples and campaign data helps you spot code overlaps and recurring TTPs.
+3. Knowledge and experience about the samples, group, campaign. The more you’ve worked with certain malware families, groups, or campaigns, the easier it is to recognize patterns and connect dots. Yeah, it's a long term game my friend.
+4. Threat intelligence feeds and reports
     - Threat intel reports (public and private)
     - Free/Commercial feeds
     - Sharing groups and communities
-    - APT reports
+    - Blog-posts
 
 # Threat Attribution Checklist
 
@@ -60,8 +55,8 @@ Below is a checklist you can use as a reference for threat attribution. For each
 ## [1] Malware, Toolset, and Code Analysis
 
 ### Sample Similarities
-- KTAE / nsimilarities: Compare known threat actor samples with your current one to spot overlaps.  
-- VirusTotal (VT) hunting and lookup: Use VT to check relations, comments, and prior submissions. This often reveals reuse across campaigns.  
+- VirusTotal (VT) hunting and lookup: Use VT to check relations, comments, and prior submissions. This often reveals reuse across campaigns.
+- Build or use Machine Learning algorithm to find sample similarities.
 
 ### Code Features & Style
 - Binary diffing (Diaphora): Compare samples to see code overlaps or reused functions.  
@@ -73,13 +68,11 @@ Below is a checklist you can use as a reference for threat attribution. For each
 - Code paths & import tables: Repeated API usage or unusual imports can suggest the same developer.  
 
 ### Detection Names
-- Threat Intelligence Platforms (TIPs): Check how the sample has been labeled across platforms.  
-- Aidy, FF, YARA rules: Look for prior detections or related YARA hits.  
-- VirusTotal relations & behavior: Explore relation graphs, lookup results, and sandbox behavior.  
-- YaraDDPS: Useful for clustering samples based on YARA pattern similarities.  
+- Threat Intelligence Platforms: Check how the sample has been labeled across platforms.   
+- VirusTotal relations & behavior: Explore relation graphs, lookup results, and sandbox behavior. 
 
 ### PDB Paths
-- Leaked developer usernames or paths: PDB (Program Database) files sometimes reveal usernames, directories, or internal project names.  
+- Leaked developer usernames or paths: PDB files sometimes reveal usernames, directories, or internal project names.  
 
 ### Build Artifacts
 - Builder leaks: If a malware builder leaks, compare generated samples.  
@@ -105,7 +98,7 @@ Below is a checklist you can use as a reference for threat attribution. For each
 - Encryption scheme similarities: Custom crypto routines are often reused by the same developers.  
 
 ### API and Syscall Usage
-- WinAPI usage patterns: Consistent ways of calling APIs (e.g., resolving APIs dynamically via hashes).  
+- WinAPI usage patterns: Consistent ways of calling APIs (custom API hashing algo).  
 - Custom syscall wrappers: Actors sometimes write their own wrappers to bypass EDR hooks.  
 
 ### Synchronization Primitives
@@ -128,7 +121,7 @@ Below is a checklist you can use as a reference for threat attribution. For each
   - Compromised servers  
   - VPS/Cloud providers  
   - Standard web hosting  
-  - Legitimate services abused (e.g., Dropbox, Google Drive)  
+  - Legitimate services abused (e.g., Telegram, Google Drive)  
 
 ### Tools and Platforms
 - VirusTotal, APTDB, and other intel platforms for infrastructure lookups.  
@@ -299,16 +292,17 @@ Human elements like passwords, ransom notes, and wording styles can be very tell
 
 ## [8] Offensive intelligence Against Threat Actors
 
-Hacking back into an adversary’s servers is almost always illegal for private researchers, and honestly, I don’t recommend doing it. That said, I’ve seen cases where researchers around the world have shared stories on X or in blogs about gaining access to attacker infrastructure
+Hacking back into an adversary’s servers is almost always illegal for private researchers, and tbh, I don’t recommend doing it. I’ve seen cases where researchers around the world have shared a post on X or in blogs hinted about how they get the intel by gaining access to attacker infrastructure.
 
-When these techniques are used, it can actually provide valuable insights such as verifying internal tools used by the threat actor, identifying victims, exposing malware builders, and mapping out campaigns and many more loot and juicy stuff.
+When these techniques are used, it can provide valuable insights such as verifying internal tools used by the threat actor, identifying victims, exposing malware builders, and mapping out campaigns and many more loot and juicy stuff. So, yeah.
 
 ### Infrastructure Takeovers
 - Sometimes law enforcement or CERTs seize attacker C2 servers. This lets them map infections, collect victim data, and in some cases even push kill-switches to disable malware.
 
 ### Exploiting Attacker Infrastructure
 - Panel takeovers: Many crimeware groups rely on web-based C2 panels. Weak authentication, SQL injection, or outdated software sometimes allow defenders to hijack these panels, exposing operator accounts, activity logs, and victim data.
-- Many crimeware groups rely on web-based C2 panels. Weak logins, SQL injection, or outdated code have allowed defenders to take over these panels, exposing operator accounts, logs, and victim lists. Attacker storage servers and FTP sites can also leak useful data. I’ve seen cases where malware samples contained hardcoded FTP credentials, researchers used them to access staging servers and pull down exfiltrated files.
+- Many crimeware groups rely on web-based C2 panels. Weak logins, SQL injection, or outdated code have allowed us to take over these panels, exposing operator accounts, logs, and victim lists.
+- Attacker storage servers and FTP sites can also leak useful data. I’ve seen cases where malware samples contained hardcoded FTP credentials, researchers used them to access staging servers and pull down exfiltrated files.
 
 ### Monitoring Legitimate Services Used as C2
 - Some operators abuse services like Telegram for C2 communication. Monitoring malicious Telegram channels can reveal how victims interact with attacker infrastructure, and in some cases, uncover new C2 addresses or payloads.
@@ -324,7 +318,7 @@ Attribution is tricky. Threat actors share tools, infrastructure, and even techn
 - Never assume when attributing activity. It’s better to leave something unattributed than to make a wrong call.  
 
 ## Infrastructure
-- Be cautious with shared servers and domains — multiple groups can use the same infrastructure.  
+- Be cautious with shared servers and domains. Multiple groups can use the same infrastructure.  
 - Don’t assume that domains hosted on the same IP all belong to the same actor.  
   - IPs can be reassigned, spoofed, or routed through VPNs.  
 - Domains bought through brokers aren’t reliable for attribution.  
@@ -373,7 +367,7 @@ Attribution is tricky. Threat actors share tools, infrastructure, and even techn
   - Validate behavior over time, not just the presence of a tool.  
 
 ## Motivation
-- Be careful when judging intent. Espionage groups sometimes dabble in financially motivated attacks, and vice versa.  
+- Be careful when judging intent. 
 - Looking at intent can help narrow down attribution, but it’s rarely a silver bullet.
 
 # Shared tools, malware, open-source & frameworks amongst threat actor
@@ -503,6 +497,6 @@ Always express attribution with confidence levels:
 - Medium: some supporting evidence, but still gaps.  
 - High: strong, consistent, and well-corroborated across multiple sources.
 
-Goooddd luckk!
+And goooddd luckk on your threat intel journey!
 
-Anyway, if this content has any wrong information, please let me know. My DM at X (@frdfzi) are always open.
+Anyway, if this content has any wrong information, please let me know. My DM at X (@frdfzi) are always open. See ya!
