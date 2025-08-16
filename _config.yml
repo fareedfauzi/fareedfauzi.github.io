@@ -219,3 +219,8 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
+
+collections:
+  pma-labs:
+    output: true
+    permalink: /pma-labs/:name/
