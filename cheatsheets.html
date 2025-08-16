@@ -1,0 +1,15 @@
+---
+layout: page
+title: Cheatsheets 📚
+permalink: /cheatsheets.html
+---
+
+{%- assign sheets = site.cheatsheets | sort: 'date' | reverse -%}
+
+{%- include article-list.html
+    articles=sheets
+    type='brief'
+    show_info=true
+    show_excerpt=true
+    show_readmore=true
+-%}
