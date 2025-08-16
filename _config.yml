@@ -227,3 +227,4 @@ collections:
   cheatsheets:
     output: true
     permalink: /cheatsheets/:name/
+
