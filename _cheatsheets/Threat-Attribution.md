@@ -230,10 +230,6 @@ TTPs often overlap across different actors. Many groups use the same techniques 
 - Process: Suspicious child processes, process injection, LOLBins usage.  
 - Network artifacts: Unusual ports, beaconing intervals, traffic patterns.
 
-For example, ToneShell and QReverse having similar fake POST request body
-
-![](https://github.com/user-attachments/assets/522e9d62-106d-48c8-bf04-a7757387a92e)
-
 ### Command Usage
 - Batch, PowerShell, or bash syntax preferences can indicate actor habits. 
 
@@ -280,10 +276,6 @@ For example, ToneShell and QReverse having similar fake POST request body
 - Phishing theme and decoy reuse: Same lure types reused across campaigns (e.g., fake diplomatic invites, COVID-19 alerts).  
 - Regional or topical lures: Documents or emails crafted around issues tied to specific countries, organizations, or events.
 
-Example, similar theme used in different campaigns:
-
-![](https://github.com/user-attachments/assets/6b988a8a-bf35-43ae-8d1c-122c3b0a009b)
-
 ## [5] Operational Security Mistakes
 OpSec mistakes are some of the strongest indicators for attribution, but they are rare. When they do occur, they can reveal personal habits, working hours, or even identities of operators.
 
@@ -320,13 +312,13 @@ Human elements like passwords, ransom notes, and wording styles can be very tell
 - Onion hosting reuse: Darknet (.onion) portals showing continuity across operations.  
 - Payment site templates/URLs: Same structure or cloned portal designs reused by the same group.  
 
-Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable similarities in their readme ransom notes. Credit to Art of CyberWarfare book for highlighting this tip!
-
-![](https://github.com/user-attachments/assets/27de5cc0-2370-4a79-8722-90bd81d02287)
-
 ### Textual Similarity
 - Ransom notes or README files: Comparing text across different campaigns can reveal overlaps.  
 - Similar wording, grammar, and tone: Language quirks, grammar mistakes, or even cultural references can link operations back to the same authors.
+
+Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable similarities in their readme ransom notes. Credit to Art of CyberWarfare book for this trick!
+
+![](https://github.com/user-attachments/assets/27de5cc0-2370-4a79-8722-90bd81d02287)
 
 ## [7] Open Source and External Clues
 
@@ -334,7 +326,7 @@ Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable simil
 - CTI blogs, vendor writeups, and APT reports often contain IOCs, TTPs, and attribution assessments.  
 - Useful for cross-referencing but be mindful of bias or different threat actor naming schemes.
 
-For example, read Securelist, Trendmicro blogs or CheckPoint research blog for references and update your knowledge for the current threat:
+For example, read Securelist, Trendmicro blogs or CheckPoint research blog for references and update your knowledge on the current threat:
 
 ![](https://github.com/user-attachments/assets/4e7ebbfe-d3cb-41f9-9684-361120b93a6f)
 
@@ -548,6 +540,25 @@ Shared tools are very common. You’ll often see multiple attackers using the sa
 - RemoteUtilities  
 - SMBTouch
 
+# Must read/watch list
+Here I listed some pf the books, articles and videos that can help you learn more about threat attribution in threat intel.
+ 
+## Books
+- [Art of cyberwarfare](https://nostarch.com/art-cyberwarfare)
+- [Attribution of Advanced Persistent Threats](https://link.springer.com/book/10.1007/978-3-662-61313-9)
+
+## Articles
+- [A Comprehensive Survey of Advanced Persistent Threat Attribution](https://arxiv.org/html/2409.11415v3)
+- [Kaspersky's The power of threat attribution](https://content.kaspersky-labs.com/se/media/en/business-security/enterprise/threat-attribution-engine-whitepaper.pdf)
+
+## Videos
+- [Attribution and Bias: My terrible mistakes in threat intelligence attribution](https://www.youtube.com/watch?v=rjA0Vf75cYk)
+- [What is the role of technical attribution?](https://www.youtube.com/watch?v=hUvV1S9xHyg)
+- [A Brief History of Attribution Mistakes - SANS CTI Summit 2019](https://www.youtube.com/watch?v=Y3EPkDUoGyc)
+- [24 Techniques to Gather Threat Intel and Track Actor](https://www.youtube.com/watch?v=beh5VUKc2EU)
+- [Unveiling shadows: key tactics for tracking cyber threat actors, attribution, and infrastructure](https://www.youtube.com/watch?v=bXDMsWZOeWY)
+
+
 # Wrap-up
 I can say that threat attribution is hard, and it always requires experienced and expert people to do it. Many aspects can be considered for attribution, but as long as you have enough evidence to support it, then you're good to go. Remember, do not attribute if you are not confident or if you do not have any proof for your attribution. It is always better to stay cautious than to make a wrong call.  
 
@@ -559,21 +570,3 @@ Always express attribution with confidence levels:
 And goooddd luckk on your threat intel journey!
 
 Anyway, if this content has any wrong information, please let me know. My DM at X (@frdfzi) are always open. See ya!
-
-## Must read/watch list
-Here I listed some pf the books, articles and videos that can help you learn more about threat attribution in threat intel.
- 
-### Books
-- [Art of cyberwarfare](https://nostarch.com/art-cyberwarfare)
-- [Attribution of Advanced Persistent Threats](https://link.springer.com/book/10.1007/978-3-662-61313-9)
-
-### Articles
-- [A Comprehensive Survey of Advanced Persistent Threat Attribution](https://arxiv.org/html/2409.11415v3)
-- [Kaspersky's The power of threat attribution](https://content.kaspersky-labs.com/se/media/en/business-security/enterprise/threat-attribution-engine-whitepaper.pdf)
-
-### Videos
-- [Attribution and Bias: My terrible mistakes in threat intelligence attribution](https://www.youtube.com/watch?v=rjA0Vf75cYk)
-- [What is the role of technical attribution?](https://www.youtube.com/watch?v=hUvV1S9xHyg)
-- [A Brief History of Attribution Mistakes - SANS CTI Summit 2019](https://www.youtube.com/watch?v=Y3EPkDUoGyc)
-- [24 Techniques to Gather Threat Intel and Track Actor](https://www.youtube.com/watch?v=beh5VUKc2EU)
-- [Unveiling shadows: key tactics for tracking cyber threat actors, attribution, and infrastructure](https://www.youtube.com/watch?v=bXDMsWZOeWY)
