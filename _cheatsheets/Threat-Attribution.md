@@ -327,22 +327,14 @@ For example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable s
 - Useful for cross-referencing but be mindful of bias or different threat actor naming schemes.
 
 For example, you can read Securelist, Trend Micro blogs, or the Check Point Research blog for references and to keep your knowledge up to date on current threats.
-
 ![](https://github.com/user-attachments/assets/4e7ebbfe-d3cb-41f9-9684-361120b93a6f)
-
 ![](https://github.com/user-attachments/assets/bf724c0d-767f-4827-834a-fe71bdd9b525)
-
 Not to mention, website like Feedly will make you stay up to date!
-
 ![](https://github.com/user-attachments/assets/77872ecf-225a-4cc4-96e7-d9177e709b98)
-
 And this [one](https://www.hendryadrian.com/threat-research/) too!
-
 ![](https://github.com/user-attachments/assets/8d763c1d-46d5-4e8d-98a7-dbc9eb1b2474)
-
 Or maybe you want to find a specific keyword in other public TI reports. You can use [this](https://mthcht.github.io/ThreatIntel-Reports/).
-
-<img width="1278" height="678" alt="image" src="https://github.com/user-attachments/assets/82f3acc2-eb19-4fa5-a65b-0a96863561f8" />
+![](https://github.com/user-attachments/assets/82f3acc2-eb19-4fa5-a65b-0a96863561f8)
 
 
 ### Forum and Underground Activity
