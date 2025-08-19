@@ -52,11 +52,18 @@ That said, I’m still a noob even today. So this guide isn’t 100% correct. It
 
 Below is a checklist you can use as a reference for threat attribution. For each item, you’ll need to decide whether it supports attribution with weak, moderate, or high confidence depending on the quality and amount of evidence you have.
 
+<img width="2040" height="696" alt="image" src="https://github.com/user-attachments/assets/67a76258-f63d-4ce5-bf3b-2b2901054542" />
+
+
 ## [1] Malware, Toolset, and Code Analysis
 
 ### Sample Similarities
 - VirusTotal (VT) hunting and lookup: Use VT to check relations, comments, and prior submissions. This often reveals reuse across campaigns.
 - Build or use Machine Learning algorithm to find sample similarities.
+
+For example, using lookup or YARA hunting in VT can helps you find more samples.
+<img width="1167" height="547" alt="image" src="https://github.com/user-attachments/assets/4c840c56-dc15-46e0-9085-3f0bfde7bc3a" />
+
 
 ### Code Features & Style
 - Binary diffing (Diaphora): Compare samples to see code overlaps or reused functions.  
@@ -65,11 +72,24 @@ Below is a checklist you can use as a reference for threat attribution. For each
 - Compilation timestamps: Look for consistent build times (e.g., always compiled during certain working hours).  
 - Internal versioning/build clues: Strings like `ver 1.0.3` or compiler artifacts may tie samples together.  
 - Project structure remnants: Artifacts from IDEs (e.g., Visual Studio paths).  
-- Code paths & import tables: Repeated API usage or unusual imports can suggest the same developer.  
+- Code paths & import tables: Repeated API usage or unusual imports can suggest the same developer.
+
+With Diaphora you can compare the code to see any new updates or look for similar variant or maybe attribute samples to specific Threat actor.
+<img width="904" height="581" alt="image" src="https://github.com/user-attachments/assets/8e1b5f8a-408f-4d2c-a2b4-59441e551f61" />
+
+Like for example, Early WannaCry (Feb 2017) shares nearly identical code with Lazarus malware from 2015 named Contopee.
+
+<img width="679" height="339" alt="image" src="https://github.com/user-attachments/assets/e1a29248-c22f-4f22-bf50-c68316829beb" />
 
 ### Detection Names
 - Threat Intelligence Platforms: Check how the sample has been labeled across platforms.   
-- VirusTotal relations & behavior: Explore relation graphs, lookup results, and sandbox behavior. 
+- VirusTotal relations & behavior: Explore relation graphs, lookup results, and sandbox behavior.
+
+Detection names in VT can give context on what malware you currently working on.
+<img width="890" height="561" alt="image" src="https://github.com/user-attachments/assets/e03e4f6a-6ebd-4f1c-8791-e2de47610a7b" />
+
+Not to mention, VT community also can help us determine the variant of the sample.
+<img width="673" height="517" alt="image" src="https://github.com/user-attachments/assets/41a49e08-a26e-485f-bedc-90ab4efca0f5" />
 
 ### PDB Paths
 - Leaked developer usernames or paths: PDB files sometimes reveal usernames, directories, or internal project names.  
@@ -87,7 +107,10 @@ Below is a checklist you can use as a reference for threat attribution. For each
 - Hardcoded C2s, usernames, commands: Reuse of infrastructure or operator nicknames.  
 - Resource metadata & entropy: Check icons, images, or version info fields.  
 - Interesting strings: Custom error messages, debug logs, or memes.  
-- Unusual resources: Embedded DLLs, HTML files, or executables with unique traits.  
+- Unusual resources: Embedded DLLs, HTML files, or executables with unique traits.
+
+Example of similar strings can be found in many variants of Talos Trojan aka QReverse
+<img width="806" height="638" alt="image" src="https://github.com/user-attachments/assets/425b3207-0564-4a47-90b7-ee0c5a18ae04" />
 
 ### Anti-analysis Techniques
 - Obfuscation/packing: Consistent use of certain obfuscators across campaigns.  
@@ -111,6 +134,10 @@ Below is a checklist you can use as a reference for threat attribution. For each
 
 ## [2] Infrastructure and Network Indicators
 
+Below list can be a guideline to hunt or attribute the based on C2/infrastructures:
+
+<img width="1199" height="757" alt="image" src="https://github.com/user-attachments/assets/4bd3c9f3-316b-4aef-903c-c3669a87809f" />
+
 ### IP/Domain Reuse
 - Look up IP addresses associated with the activity at the time of the incident.  
 - Common elements to track:  
@@ -131,6 +158,17 @@ Below is a checklist you can use as a reference for threat attribution. For each
   - [ViewDNS](https://viewdns.info/)  
 - Reverse WHOIS:  
   - [Whoisology](https://whoisology.com/)  
+
+Use VT for more intelligence insight
+<img width="525" height="487" alt="image" src="https://github.com/user-attachments/assets/ffe0484e-7846-4193-915e-9e15300510be" />
+
+Not to mention the comment section! (Credit to Rectifyq!)
+<img width="678" height="275" alt="image" src="https://github.com/user-attachments/assets/086e29a9-9168-4161-a13f-b7a9078a2258" />
+
+In another case, you can perform IOC hunting in Google, reports, TIP, Github, X, AlienVault and other platforms
+<img width="717" height="616" alt="image" src="https://github.com/user-attachments/assets/350c5fc2-d42c-4341-bb36-bfc232836af3" />
+
+<img width="794" height="637" alt="image" src="https://github.com/user-attachments/assets/802d1510-499d-45cf-825a-a32c60d695fc" />
 
 ### Certificate Reuse or Similarities
 - TLS/SSL certificate reuse across multiple campaigns.  
@@ -181,7 +219,11 @@ TTPs often overlap across different actors. Many groups use the same techniques 
 - Filesystem: Dropped files, unusual directories, file timestamp tampering.  
 - Registry: Persistence keys, autoruns, registry modifications tied to malware.  
 - Process: Suspicious child processes, process injection, LOLBins usage.  
-- Network artifacts: Unusual ports, beaconing intervals, traffic patterns.  
+- Network artifacts: Unusual ports, beaconing intervals, traffic patterns.
+
+For example, ToneShell and QReverse having similar fake POST request body
+
+<img width="1989" height="1162" alt="image" src="https://github.com/user-attachments/assets/522e9d62-106d-48c8-bf04-a7757387a92e" />
 
 ### Command Usage
 - Batch, PowerShell, or bash syntax preferences can indicate actor habits. 
@@ -229,6 +271,10 @@ TTPs often overlap across different actors. Many groups use the same techniques 
 - Phishing theme and decoy reuse: Same lure types reused across campaigns (e.g., fake diplomatic invites, COVID-19 alerts).  
 - Regional or topical lures: Documents or emails crafted around issues tied to specific countries, organizations, or events.
 
+Example, similar theme used in different campaigns:
+
+<img width="624" height="377" alt="image" src="https://github.com/user-attachments/assets/6b988a8a-bf35-43ae-8d1c-122c3b0a009b" />
+
 ## [5] Operational Security Mistakes
 OpSec mistakes are some of the strongest indicators for attribution, but they are rare. When they do occur, they can reveal personal habits, working hours, or even identities of operators.
 
@@ -265,6 +311,10 @@ Human elements like passwords, ransom notes, and wording styles can be very tell
 - Onion hosting reuse: Darknet (.onion) portals showing continuity across operations.  
 - Payment site templates/URLs: Same structure or cloned portal designs reused by the same group.  
 
+Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable similarities in their readme ransom notes. Credit to Art of CyberWarfare book for highlighting this tip!
+
+<img width="2380" height="1483" alt="image" src="https://github.com/user-attachments/assets/27de5cc0-2370-4a79-8722-90bd81d02287" />
+
 ### Textual Similarity
 - Ransom notes or README files: Comparing text across different campaigns can reveal overlaps.  
 - Similar wording, grammar, and tone: Language quirks, grammar mistakes, or even cultural references can link operations back to the same authors.
@@ -273,7 +323,11 @@ Human elements like passwords, ransom notes, and wording styles can be very tell
 
 ### Public Threat Reports
 - CTI blogs, vendor writeups, and APT reports often contain IOCs, TTPs, and attribution assessments.  
-- Useful for cross-referencing but be mindful of bias or different threat actor naming schemes.  
+- Useful for cross-referencing but be mindful of bias or different threat actor naming schemes.
+
+For example use securelist, trendmicro or checkpoint research for references
+
+<img width="855" height="591" alt="image" src="https://github.com/user-attachments/assets/4e7ebbfe-d3cb-41f9-9684-361120b93a6f" />
 
 ### Forum and Underground Activity
 - Language and behavior in underground markets can hint at operator origin.  
@@ -496,3 +550,21 @@ Always express attribution with confidence levels:
 And goooddd luckk on your threat intel journey!
 
 Anyway, if this content has any wrong information, please let me know. My DM at X (@frdfzi) are always open. See ya!
+
+## Must read/watch list
+Here I listed some pf the books, articles and videos that can help you learn more about threat attribution in threat intel.
+ 
+### Books
+- [Art of cyberwarfare](https://nostarch.com/art-cyberwarfare)
+- [Attribution of Advanced Persistent Threats](https://link.springer.com/book/10.1007/978-3-662-61313-9)
+
+### Articles
+- [A Comprehensive Survey of Advanced Persistent Threat Attribution](https://arxiv.org/html/2409.11415v3)
+- [Kaspersky's The power of threat attribution](https://content.kaspersky-labs.com/se/media/en/business-security/enterprise/threat-attribution-engine-whitepaper.pdf)
+
+### Videos
+- [Attribution and Bias: My terrible mistakes in threat intelligence attribution](https://www.youtube.com/watch?v=rjA0Vf75cYk)
+- [What is the role of technical attribution?](https://www.youtube.com/watch?v=hUvV1S9xHyg)
+- [A Brief History of Attribution Mistakes - SANS CTI Summit 2019](https://www.youtube.com/watch?v=Y3EPkDUoGyc)
+- [24 Techniques to Gather Threat Intel and Track Actor](https://www.youtube.com/watch?v=beh5VUKc2EU)
+- [Unveiling shadows: key tactics for tracking cyber threat actors, attribution, and infrastructure](https://www.youtube.com/watch?v=bXDMsWZOeWY)
