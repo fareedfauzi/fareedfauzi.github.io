@@ -34,7 +34,8 @@ That said, I’m still a noob even today. So this guide isn’t 100% correct. It
 10. Be transparent. Always explain what’s based on evidence, what’s assumption, and how you reached your conclusion.
 11. Don’t overstate. Use careful wording like “likely,” “possibly,” or “with moderate confidence” instead of making it sound absolute.
 
-# What usually you need to have to conduct threat attribution?
+# What usually you need to conduct threat attribution?
+
 1. A LOT of telemetry and dataset. Attribution isn’t possible without a big pool of telemetry and evidence.
     - Endpoint
     - Network
@@ -54,7 +55,6 @@ Below is a checklist you can use as a reference for threat attribution. For each
 
 ![](https://github.com/user-attachments/assets/67a76258-f63d-4ce5-bf3b-2b2901054542)
 
-
 ## [1] Malware, Toolset, and Code Analysis
 
 ### Sample Similarities
@@ -62,8 +62,8 @@ Below is a checklist you can use as a reference for threat attribution. For each
 - Build or use Machine Learning algorithm to find sample similarities.
 
 For example, using lookup or YARA hunting in VT can helps you find more samples.
-<img width="1167" height="547" alt="image" src="https://github.com/user-attachments/assets/4c840c56-dc15-46e0-9085-3f0bfde7bc3a" />
 
+![](https://github.com/user-attachments/assets/4c840c56-dc15-46e0-9085-3f0bfde7bc3a)
 
 ### Code Features & Style
 - Binary diffing (Diaphora): Compare samples to see code overlaps or reused functions.  
@@ -75,21 +75,24 @@ For example, using lookup or YARA hunting in VT can helps you find more samples.
 - Code paths & import tables: Repeated API usage or unusual imports can suggest the same developer.
 
 With Diaphora you can compare the code to see any new updates or look for similar variant or maybe attribute samples to specific Threat actor.
-<img width="904" height="581" alt="image" src="https://github.com/user-attachments/assets/8e1b5f8a-408f-4d2c-a2b4-59441e551f61" />
+
+![](https://github.com/user-attachments/assets/8e1b5f8a-408f-4d2c-a2b4-59441e551f61)
 
 Like for example, Early WannaCry (Feb 2017) shares nearly identical code with Lazarus malware from 2015 named Contopee.
 
-<img width="679" height="339" alt="image" src="https://github.com/user-attachments/assets/e1a29248-c22f-4f22-bf50-c68316829beb" />
+![](https://github.com/user-attachments/assets/e1a29248-c22f-4f22-bf50-c68316829beb)
 
 ### Detection Names
 - Threat Intelligence Platforms: Check how the sample has been labeled across platforms.   
 - VirusTotal relations & behavior: Explore relation graphs, lookup results, and sandbox behavior.
 
 Detection names in VT can give context on what malware you currently working on.
-<img width="890" height="561" alt="image" src="https://github.com/user-attachments/assets/e03e4f6a-6ebd-4f1c-8791-e2de47610a7b" />
+
+![](https://github.com/user-attachments/assets/e03e4f6a-6ebd-4f1c-8791-e2de47610a7b)
 
 Not to mention, VT community also can help us determine the variant of the sample.
-<img width="673" height="517" alt="image" src="https://github.com/user-attachments/assets/41a49e08-a26e-485f-bedc-90ab4efca0f5" />
+
+![](https://github.com/user-attachments/assets/41a49e08-a26e-485f-bedc-90ab4efca0f5)
 
 ### PDB Paths
 - Leaked developer usernames or paths: PDB files sometimes reveal usernames, directories, or internal project names.  
@@ -109,8 +112,9 @@ Not to mention, VT community also can help us determine the variant of the sampl
 - Interesting strings: Custom error messages, debug logs, or memes.  
 - Unusual resources: Embedded DLLs, HTML files, or executables with unique traits.
 
-Example of similar strings can be found in many variants of Talos Trojan aka QReverse
-<img width="806" height="638" alt="image" src="https://github.com/user-attachments/assets/425b3207-0564-4a47-90b7-ee0c5a18ae04" />
+Example of similar strings can be found in many variants of Talos Trojan aka QReverse:
+
+![](https://github.com/user-attachments/assets/425b3207-0564-4a47-90b7-ee0c5a18ae04)
 
 ### Anti-analysis Techniques
 - Obfuscation/packing: Consistent use of certain obfuscators across campaigns.  
@@ -134,9 +138,9 @@ Example of similar strings can be found in many variants of Talos Trojan aka QRe
 
 ## [2] Infrastructure and Network Indicators
 
-Below list can be a guideline to hunt or attribute the based on C2/infrastructures:
+The list below can be the guideline to hunt or attribute malware/campaign based on C2/infrastructures:
 
-<img width="1199" height="757" alt="image" src="https://github.com/user-attachments/assets/4bd3c9f3-316b-4aef-903c-c3669a87809f" />
+![](https://github.com/user-attachments/assets/4bd3c9f3-316b-4aef-903c-c3669a87809f)
 
 ### IP/Domain Reuse
 - Look up IP addresses associated with the activity at the time of the incident.  
@@ -159,16 +163,21 @@ Below list can be a guideline to hunt or attribute the based on C2/infrastructur
 - Reverse WHOIS:  
   - [Whoisology](https://whoisology.com/)  
 
-Use VT for more intelligence insight
-<img width="525" height="487" alt="image" src="https://github.com/user-attachments/assets/ffe0484e-7846-4193-915e-9e15300510be" />
+Use VT for more intelligence insight:
 
-Not to mention the comment section! (Credit to Rectifyq!)
-<img width="678" height="275" alt="image" src="https://github.com/user-attachments/assets/086e29a9-9168-4161-a13f-b7a9078a2258" />
+![](https://github.com/user-attachments/assets/ffe0484e-7846-4193-915e-9e15300510be)
 
-In another case, you can perform IOC hunting in Google, reports, TIP, Github, X, AlienVault and other platforms
-<img width="717" height="616" alt="image" src="https://github.com/user-attachments/assets/350c5fc2-d42c-4341-bb36-bfc232836af3" />
+Not to mention the comment section! (Credit to Rectifyq!):
 
-<img width="794" height="637" alt="image" src="https://github.com/user-attachments/assets/802d1510-499d-45cf-825a-a32c60d695fc" />
+![](https://github.com/user-attachments/assets/086e29a9-9168-4161-a13f-b7a9078a2258)
+
+In another case, you can perform IOC hunting in Google, reports, TIP, Github, X, AlienVault and other platforms:
+
+![](https://github.com/user-attachments/assets/350c5fc2-d42c-4341-bb36-bfc232836af3)
+
+Alienvault usecase example:
+
+![](https://github.com/user-attachments/assets/802d1510-499d-45cf-825a-a32c60d695fc)
 
 ### Certificate Reuse or Similarities
 - TLS/SSL certificate reuse across multiple campaigns.  
@@ -223,7 +232,7 @@ TTPs often overlap across different actors. Many groups use the same techniques 
 
 For example, ToneShell and QReverse having similar fake POST request body
 
-<img width="1989" height="1162" alt="image" src="https://github.com/user-attachments/assets/522e9d62-106d-48c8-bf04-a7757387a92e" />
+![](https://github.com/user-attachments/assets/522e9d62-106d-48c8-bf04-a7757387a92e)
 
 ### Command Usage
 - Batch, PowerShell, or bash syntax preferences can indicate actor habits. 
@@ -273,7 +282,7 @@ For example, ToneShell and QReverse having similar fake POST request body
 
 Example, similar theme used in different campaigns:
 
-<img width="624" height="377" alt="image" src="https://github.com/user-attachments/assets/6b988a8a-bf35-43ae-8d1c-122c3b0a009b" />
+![](https://github.com/user-attachments/assets/6b988a8a-bf35-43ae-8d1c-122c3b0a009b)
 
 ## [5] Operational Security Mistakes
 OpSec mistakes are some of the strongest indicators for attribution, but they are rare. When they do occur, they can reveal personal habits, working hours, or even identities of operators.
@@ -313,7 +322,7 @@ Human elements like passwords, ransom notes, and wording styles can be very tell
 
 Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable similarities in their readme ransom notes. Credit to Art of CyberWarfare book for highlighting this tip!
 
-<img width="2380" height="1483" alt="image" src="https://github.com/user-attachments/assets/27de5cc0-2370-4a79-8722-90bd81d02287" />
+![](https://github.com/user-attachments/assets/27de5cc0-2370-4a79-8722-90bd81d02287)
 
 ### Textual Similarity
 - Ransom notes or README files: Comparing text across different campaigns can reveal overlaps.  
@@ -325,9 +334,9 @@ Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable simil
 - CTI blogs, vendor writeups, and APT reports often contain IOCs, TTPs, and attribution assessments.  
 - Useful for cross-referencing but be mindful of bias or different threat actor naming schemes.
 
-For example use securelist, trendmicro or checkpoint research for references
+For example, read Securelist, Trendmicro blogs or CheckPoint research blog for references and update your knowledge for the current threat:
 
-<img width="855" height="591" alt="image" src="https://github.com/user-attachments/assets/4e7ebbfe-d3cb-41f9-9684-361120b93a6f" />
+![](https://github.com/user-attachments/assets/4e7ebbfe-d3cb-41f9-9684-361120b93a6f)
 
 ### Forum and Underground Activity
 - Language and behavior in underground markets can hint at operator origin.  
