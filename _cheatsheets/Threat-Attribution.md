@@ -52,7 +52,7 @@ That said, I’m still a noob even today. So this guide isn’t 100% correct. It
 
 Below is a checklist you can use as a reference for threat attribution. For each item, you’ll need to decide whether it supports attribution with weak, moderate, or high confidence depending on the quality and amount of evidence you have.
 
-<img width="2040" height="696" alt="image" src="https://github.com/user-attachments/assets/67a76258-f63d-4ce5-bf3b-2b2901054542" />
+![](https://github.com/user-attachments/assets/67a76258-f63d-4ce5-bf3b-2b2901054542)
 
 
 ## [1] Malware, Toolset, and Code Analysis
