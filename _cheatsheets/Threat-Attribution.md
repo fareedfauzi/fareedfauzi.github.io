@@ -6,33 +6,33 @@ tags:
 - Threat-Intelligence
 ---
 
-Hey yow. What's up? It's been a few months since I wrote anything. I came up with this idea for a blog topic when my ex-junior asked me, "Yed, how can we attribute a malware to a threat actor?" Then I remembered the first time I had to do it and asked the same question to myself at my current job.  
+Hey yow. What's up? It's been a year since I wrote anything in my blog. I came up with this idea for a blog topic when my ex-junior asked me, "_Yed, how can we attribute a malware to a threat actor?_" Then I remembered the first time I had to do it and asked the same question to myself at my current job.
 
-Today, malware reverse engineering and threat intelligence are my day-to-day work. When I first joined my current employer, I was a pure malware analyst with basically zero knowledge of threat intelligence. But still, I had to do threat attribution whenever I worked on malware or threat research.
+Today, malware reversing and threat intelligence becane my day-to-day tasks. When I first joined my current employer, I was a pure malware analyst with basically zero knowledge of TI. But still, I had to do threat attribution whenever I worked on malware or threat research.
 
 As a first-timer in this whole threat intelligence scene, I honestly found attribution really tough. It felt overwhelming at the start. But after a year, reading a bunch of books, and constantly asking my senior teammates for guidance, I’ve managed to put together a few points on how we can attribute a piece of malware or a campaign to certain threat groups.
 
 That said, I’m still a noob even today. So this guide isn’t 100% correct. It’s just based on what I’ve read, what I’ve seen at work, and what I’ve learned from others. So, let’s go through a few aspects that can be used for threat attribution in threat intelligence. But, before that, let's talk about several importants code of conducts in threat attribution.
 
 # Code of conducts
-1. Stick to evidence, not guesses. Assumptions can guide your analysis, but they should never be the foundation of your attribution.
-2. Attribution takes time. It’s rarely quick, sometimes it takes years of tracking and connecting the dots.
-3. One clue isn’t enough. An IP, a string, or a single sample won’t cut it. Always cross-check with multiple data points using your internal data or maybe ask other researchers.
-4. Track the bigger picture. Document attack timelines, overlaps between campaigns, and differences in malware versions.
-5. Actors change. Groups evolve their tools and sometimes shift their targeting, so keep an eye on how they grow over time.
-6. Expect deception. Advanced actors may deliberately leave behind false trails to mislead investigators.
+1. **Stick to evidence, not guesses**. Assumptions can guide your analysis, but they should never be the foundation of your attribution.
+2. **Attribution takes time**. It’s rarely quick, sometimes it takes years of tracking and connecting the dots.
+3. **One clue isn’t enough**. An IP, a string, or a single sample won’t cut it. Always cross-check with multiple data points using your internal data or maybe ask other researchers.
+4. Track the **bigger picture**. Document attack timelines, overlaps between campaigns, and differences in malware versions.
+5. **Actors change**. Groups evolve their tools and sometimes shift their targeting, so keep an eye on how they grow over time.
+6. **Expect deception**. Advanced actors may deliberately leave behind false trails to mislead investigators.
 7. Attribution to a specific actor = hard.
 8. Attribution to a government/nation = way harder. Why?
     - Use front companies, proxies, or criminal affiliates
     - Naming a country can trigger diplomatic, legal, or military consequences.
     - Public reports are often toned down. That’s why you’ll often see phrasing like “likely linked to Chinese state interests” instead of direct blame.
-9. Know when to stop. Usually, attribution ends at the actor-level (e.g., APT29), and you should always state your confidence level.
+9. **Know when to stop**. Usually, attribution ends at the actor-level (e.g., APT29), and you should always state your confidence level.
     - Use confidence ratings clearly:
       - Low = weak evidence, too many gaps.
       - Moderate = some solid evidence with supporting context.
       - High = strong, consistent, and well-corroborated evidence.
-10. Be transparent. Always explain what’s based on evidence, what’s assumption, and how you reached your conclusion.
-11. Don’t overstate. Use careful wording like “likely,” “possibly,” or “with moderate confidence” instead of making it sound absolute.
+10. **Be transparent**. Always explain what’s based on evidence, what’s assumption, and how you reached your conclusion.
+11. **Don’t overstate**. Use careful wording like “likely,” “possibly,” or “with moderate confidence” instead of making it sound absolute.
 
 # What usually you need to conduct threat attribution?
 
@@ -74,11 +74,11 @@ For example, using lookup or YARA hunting in VT can helps you find more samples.
 - Project structure remnants: Artifacts from IDEs (e.g., Visual Studio paths).  
 - Code paths & import tables: Repeated API usage or unusual imports can suggest the same developer.
 
-With Diaphora you can compare the code to see any new updates or look for similar variant or maybe attribute samples to specific Threat actor.
+With Diaphora, you can compare code to identify updates, spot similar variants, or even attribute samples to specific threat actors.
 
 ![](https://github.com/user-attachments/assets/8e1b5f8a-408f-4d2c-a2b4-59441e551f61)
 
-Like for example, Early WannaCry (Feb 2017) shares nearly identical code with Lazarus malware from 2015 named Contopee.
+For example, early WannaCry (February 2017) shares nearly identical code with Lazarus malware from 2015, known as Contopee.
 
 ![](https://github.com/user-attachments/assets/e1a29248-c22f-4f22-bf50-c68316829beb)
 
@@ -86,11 +86,11 @@ Like for example, Early WannaCry (Feb 2017) shares nearly identical code with La
 - Threat Intelligence Platforms: Check how the sample has been labeled across platforms.   
 - VirusTotal relations & behavior: Explore relation graphs, lookup results, and sandbox behavior.
 
-Detection names in VT can give context on what malware you currently working on.
+Detection names in VirusTotal (VT) can provide useful context about the malware you are analyzing.
 
 ![](https://github.com/user-attachments/assets/e03e4f6a-6ebd-4f1c-8791-e2de47610a7b)
 
-Not to mention, VT community also can help us determine the variant of the sample.
+Additionally, the VT Community can also help in identifying the specific variant of a sample.
 
 ![](https://github.com/user-attachments/assets/41a49e08-a26e-485f-bedc-90ab4efca0f5)
 
@@ -112,7 +112,7 @@ Not to mention, VT community also can help us determine the variant of the sampl
 - Interesting strings: Custom error messages, debug logs, or memes.  
 - Unusual resources: Embedded DLLs, HTML files, or executables with unique traits.
 
-Example of similar strings can be found in many variants of Talos Trojan aka QReverse:
+Examples of similar strings can be found in many variants of the Talos Trojan, also known as QReverse.
 
 ![](https://github.com/user-attachments/assets/425b3207-0564-4a47-90b7-ee0c5a18ae04)
 
@@ -138,7 +138,7 @@ Example of similar strings can be found in many variants of Talos Trojan aka QRe
 
 ## [2] Infrastructure and Network Indicators
 
-The list below can be the guideline to hunt or attribute malware/campaign based on C2/infrastructures:
+The list below can serve as a guideline for hunting or attributing malware and campaigns based on C2 infrastructure.
 
 ![](https://github.com/user-attachments/assets/4bd3c9f3-316b-4aef-903c-c3669a87809f)
 
@@ -163,19 +163,19 @@ The list below can be the guideline to hunt or attribute malware/campaign based 
 - Reverse WHOIS:  
   - [Whoisology](https://whoisology.com/)  
 
-Use VT for more intelligence insight:
+Use VT for deeper intelligence insights:
 
 ![](https://github.com/user-attachments/assets/ffe0484e-7846-4193-915e-9e15300510be)
 
-Not to mention the comment section! (Credit to Rectifyq!):
+Not to mention the comment section! (Credit to Rectifyq).
 
 ![](https://github.com/user-attachments/assets/086e29a9-9168-4161-a13f-b7a9078a2258)
 
-In another case, you can perform IOC hunting in Google, reports, TIP, Github, X, AlienVault and other platforms:
+In another case, you can perform IOC hunting across platforms such as Google, security reports, TIPs, GitHub, X, AlienVault, and others.
 
 ![](https://github.com/user-attachments/assets/350c5fc2-d42c-4341-bb36-bfc232836af3)
 
-Alienvault usecase example:
+Example of Alienvault use-case:
 
 ![](https://github.com/user-attachments/assets/802d1510-499d-45cf-825a-a32c60d695fc)
 
@@ -316,7 +316,7 @@ Human elements like passwords, ransom notes, and wording styles can be very tell
 - Ransom notes or README files: Comparing text across different campaigns can reveal overlaps.  
 - Similar wording, grammar, and tone: Language quirks, grammar mistakes, or even cultural references can link operations back to the same authors.
 
-Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable similarities in their readme ransom notes. Credit to Art of CyberWarfare book for this trick!
+For example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable similarities in their ransom note readme files. Credit goes to the Art of Cyber Warfare book for this insight!
 
 ![](https://github.com/user-attachments/assets/27de5cc0-2370-4a79-8722-90bd81d02287)
 
@@ -326,9 +326,24 @@ Example, Hermes, Ryuk, GoGalocker, and MegaCortex ransomware share notable simil
 - CTI blogs, vendor writeups, and APT reports often contain IOCs, TTPs, and attribution assessments.  
 - Useful for cross-referencing but be mindful of bias or different threat actor naming schemes.
 
-For example, read Securelist, Trendmicro blogs or CheckPoint research blog for references and update your knowledge on the current threat:
+For example, you can read Securelist, Trend Micro blogs, or the Check Point Research blog for references and to keep your knowledge up to date on current threats.
 
 ![](https://github.com/user-attachments/assets/4e7ebbfe-d3cb-41f9-9684-361120b93a6f)
+
+![](https://github.com/user-attachments/assets/bf724c0d-767f-4827-834a-fe71bdd9b525)
+
+Not to mention, website like Feedly will make you stay up to date!
+
+![](https://github.com/user-attachments/assets/77872ecf-225a-4cc4-96e7-d9177e709b98)
+
+And this [one](https://www.hendryadrian.com/threat-research/) too!
+
+![](https://github.com/user-attachments/assets/8d763c1d-46d5-4e8d-98a7-dbc9eb1b2474)
+
+Or maybe you want to find a specific keyword in other public TI reports. You can use [this](https://mthcht.github.io/ThreatIntel-Reports/).
+
+<img width="1278" height="678" alt="image" src="https://github.com/user-attachments/assets/82f3acc2-eb19-4fa5-a65b-0a96863561f8" />
+
 
 ### Forum and Underground Activity
 - Language and behavior in underground markets can hint at operator origin.  
@@ -541,8 +556,8 @@ Shared tools are very common. You’ll often see multiple attackers using the sa
 - SMBTouch
 
 # Must read/watch list
-Here I listed some pf the books, articles and videos that can help you learn more about threat attribution in threat intel.
- 
+Here I’ve listed some books, articles, and videos that can help you learn more about threat attribution in threat intelligence.
+
 ## Books
 - [Art of cyberwarfare](https://nostarch.com/art-cyberwarfare)
 - [Attribution of Advanced Persistent Threats](https://link.springer.com/book/10.1007/978-3-662-61313-9)
