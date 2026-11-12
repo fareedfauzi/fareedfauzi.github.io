@@ -189,7 +189,6 @@ exclude:
   - README-*.md
   - README.md
   - gulpfile.js
-  - jekyll-text-theme.gemspec
   - package-lock.json
   - package.json
   - /docs
@@ -219,8 +218,3 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jemoji
-
-collections:
-  pma-labs:
-    output: true
-    permalink: /pma-labs/:name/
